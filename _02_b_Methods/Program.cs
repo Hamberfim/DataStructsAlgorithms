@@ -74,7 +74,7 @@
             {
                 if (i > 0)
                 {
-                    Console.Write(i);
+                    Console.Write(i + " ");
                     System.Threading.Thread.Sleep(250);  // waiting 0.25 sec.
                     Recursive(i - 1);  // recursive call
                 }
