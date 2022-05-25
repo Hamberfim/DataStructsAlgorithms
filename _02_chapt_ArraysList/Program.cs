@@ -79,7 +79,7 @@ namespace _02_chapt_ArraysList
 
             // simple jagged array - array of arrays with irregualr dimentions
             string[][] jaggedArrayA =  // assigned during allocation  -- this has a visual aspect that may make more sense
-                {
+            {
                     new string[] { "alpha a" },
                     new string[] { "beta a", "beta b"},
                     new string[] { "gamma a", "gamma b", "gamma c"},
@@ -93,7 +93,7 @@ namespace _02_chapt_ArraysList
 
             Console.WriteLine();  // space in output
 
-            Console.WriteLine("=== as a table ===");
+            Console.WriteLine("=== jagged array as a table ===");
             // output a table-like display
             var tabled = string.Format("{0, 8}\n", jaggedArrayA[0][0]) +
                 string.Format("{0, 7}", jaggedArrayA[1][0]) +  // word length adjustment
@@ -110,20 +110,36 @@ namespace _02_chapt_ArraysList
 
             // allocated one at a time
             string[][] jaggedArrayB = new string[3][];
+
+            // 1st
             jaggedArrayB[0] = new string[1];
             jaggedArrayB[0][0] = "First line a";
+            // display 1st
+            Console.WriteLine(jaggedArrayB[0][0]);
 
+            // second
             jaggedArrayB[1] = new string[3];
             jaggedArrayB[1][0] = "Second line a";
             jaggedArrayB[1][1] = "Second line b";
             jaggedArrayB[1][2] = "Second line c";
+            // display second
+            Console.WriteLine(jaggedArrayB[1][0]);
+            Console.WriteLine(jaggedArrayB[1][1]);
+            Console.WriteLine(jaggedArrayB[1][2]);
 
-            Console.WriteLine(jaggedArrayB[0][0]);  // alpha a
-            Console.WriteLine(jaggedArrayB[1][0]);  // beta a
-            Console.WriteLine(jaggedArrayB[1][1]);  // beta b
-            Console.WriteLine(jaggedArrayB[1][2]);  // beta c
-
-             
+            // third
+            jaggedArrayB[2] = new string[5];
+            jaggedArrayB[2][0] = "Third line a";
+            jaggedArrayB[2][1] = "Third line b";
+            jaggedArrayB[2][2] = "Third line c";
+            jaggedArrayB[2][3] = "Third line d";
+            jaggedArrayB[2][4] = "Third line e";
+            // display third
+            Console.WriteLine(jaggedArrayB[2][0]);
+            Console.WriteLine(jaggedArrayB[2][1]);
+            Console.WriteLine(jaggedArrayB[2][2]);
+            Console.WriteLine(jaggedArrayB[2][3]);
+            Console.WriteLine(jaggedArrayB[2][4]);
 
         }
     }
