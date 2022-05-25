@@ -64,7 +64,7 @@ namespace _02_chapt_ArraysList
                     multiplicationTable[x, y] = (x + 1) * (y + 1);
                 }
             }
-            
+
             // print out the multiplication table
             for (int x = 0; x < multiplicationTable.GetLength(0); x++)
             {
@@ -76,7 +76,54 @@ namespace _02_chapt_ArraysList
             }
 
             Console.WriteLine();  // space in output
-            
+
+            // simple jagged array - array of arrays with irregualr dimentions
+            string[][] jaggedArrayA =  // assigned during allocation  -- this has a visual aspect that may make more sense
+                {
+                    new string[] { "alpha a" },
+                    new string[] { "beta a", "beta b"},
+                    new string[] { "gamma a", "gamma b", "gamma c"},
+                    new string[] { "delta a", "delta b"}
+            };
+
+            Console.WriteLine(jaggedArrayA[0][0]);  // alpha a
+            Console.WriteLine(jaggedArrayA[1][1]);  // beta b
+            Console.WriteLine(jaggedArrayA[2][2]);  // gamma c
+            Console.WriteLine(jaggedArrayA[3][0]);  // delta a
+
+            Console.WriteLine();  // space in output
+
+            Console.WriteLine("=== as a table ===");
+            // output a table-like display
+            var tabled = string.Format("{0, 8}\n", jaggedArrayA[0][0]) +
+                string.Format("{0, 7}", jaggedArrayA[1][0]) +  // word length adjustment
+                string.Format("{0, 7}\n", jaggedArrayA[1][1]) +
+                string.Format("{0, 8}", jaggedArrayA[2][0]) +
+                string.Format("{0, 8}", jaggedArrayA[2][1]) +
+                string.Format("{0, 8}\n", jaggedArrayA[2][2]) +
+                string.Format("{0, 8}", jaggedArrayA[3][0]) +
+                string.Format("{0, 8}", jaggedArrayA[3][1]);
+
+            Console.WriteLine(tabled);
+
+            Console.WriteLine();  // space in output
+
+            // allocated one at a time
+            string[][] jaggedArrayB = new string[3][];
+            jaggedArrayB[0] = new string[1];
+            jaggedArrayB[0][0] = "First line a";
+
+            jaggedArrayB[1] = new string[3];
+            jaggedArrayB[1][0] = "Second line a";
+            jaggedArrayB[1][1] = "Second line b";
+            jaggedArrayB[1][2] = "Second line c";
+
+            Console.WriteLine(jaggedArrayB[0][0]);  // alpha a
+            Console.WriteLine(jaggedArrayB[1][0]);  // beta a
+            Console.WriteLine(jaggedArrayB[1][1]);  // beta b
+            Console.WriteLine(jaggedArrayB[1][2]);  // beta c
+
+             
 
         }
     }
