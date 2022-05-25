@@ -111,30 +111,30 @@ namespace _02_chapt_ArraysList
             // allocated one at a time
             string[][] jaggedArrayB = new string[3][];
 
-            // 1st
+            // 1st jagged array
             jaggedArrayB[0] = new string[1];
             jaggedArrayB[0][0] = "First line a";
-            // display 1st
+            // display 1st jagged array
             Console.WriteLine(jaggedArrayB[0][0]);
 
-            // second
+            // second jagged array
             jaggedArrayB[1] = new string[3];
             jaggedArrayB[1][0] = "Second line a";
             jaggedArrayB[1][1] = "Second line b";
             jaggedArrayB[1][2] = "Second line c";
-            // display second
+            // display second jagged array
             Console.WriteLine(jaggedArrayB[1][0]);
             Console.WriteLine(jaggedArrayB[1][1]);
             Console.WriteLine(jaggedArrayB[1][2]);
 
-            // third
+            // third jagged array
             jaggedArrayB[2] = new string[5];
             jaggedArrayB[2][0] = "Third line a";
             jaggedArrayB[2][1] = "Third line b";
             jaggedArrayB[2][2] = "Third line c";
             jaggedArrayB[2][3] = "Third line d";
             jaggedArrayB[2][4] = "Third line e";
-            // display third
+            // display third jagged array
             Console.WriteLine(jaggedArrayB[2][0]);
             Console.WriteLine(jaggedArrayB[2][1]);
             Console.WriteLine(jaggedArrayB[2][2]);
