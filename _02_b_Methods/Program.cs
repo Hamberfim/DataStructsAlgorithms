@@ -9,20 +9,48 @@
         }
 
         // overloading
-        public void MyPrint(string word)
+        public void MyPrint(string name)
         {
-            Console.WriteLine("Hello " + word);
+            Console.WriteLine("Hello " + name);
         }
+
+        public void MyPrint(string s1, string s2)
+        {
+            Console.WriteLine(s1 + " " + s2);
+        }
+
 
         public void MyPrint(int num)
         {
-            Console.WriteLine("Your Big App number is: " + num);
+            Console.WriteLine("Your Big App number is " + num);
+        }
+
+        // params keyword - allows the passing of a variable number of arguments
+        public void MyPrint(params string[] str)
+        {
+            foreach (var s in str)
+            {
+                Console.Write(s + " ");
+            }
+            Console.Write("\n");
+        }
+
+        // option parameters
+        public void MyPrint(string name, int age = 0)
+        {
+            Console.WriteLine("Hello " + name + " " + age);
+        }
+
+        // with return type
+        public int MyPrint(int num1, int num2)
+        {
+            return num1 + num2;
         }
 
 
     }
-    
-    
+
+
     internal class Program
     {
         static void Main(string[] args)
@@ -30,10 +58,29 @@
             // call methods
             BigApp app = new BigApp();
             app.MyPrint();
+            // overloading
+            app.MyPrint("Mr.", "BigApp");
             app.MyPrint("Big App");
             app.MyPrint(7);
+            // params keyword
+            app.MyPrint("Kittens", "Happy", "lemmons");
+            // option parameters
+            app.MyPrint("Baby");
+            app.MyPrint("Sir", 45);
+            // named arguments to the parameters
+            app.MyPrint(age: 78, name: "Septuagenarian");
+            app.MyPrint(name: "Another Septuagenarian", 74);
+            // with return type
+            Console.WriteLine("Your Big App number is " + app.MyPrint(3, 9));
 
             Console.WriteLine();  // space
+
+            
+            
+
+
+
+            
         }
     }
 }
