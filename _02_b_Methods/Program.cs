@@ -1,8 +1,8 @@
 ﻿namespace _02_b_Methods
 {
 
-    class BigApp 
-    { 
+    class BigApp
+    {
         public void MyPrint()
         {
             Console.WriteLine("Hello ");
@@ -47,6 +47,18 @@
             return num1 + num2;
         }
 
+        // ref keyword
+        public void Set(ref int i)
+        {
+            i = 10;
+        }
+
+        // out keyword
+        public void Set(out string str)
+        {
+            str = "Biggy Bigs";
+        }
+
 
     }
 
@@ -72,15 +84,23 @@
             app.MyPrint(name: "Another Septuagenarian", 74);
             // with return type
             Console.WriteLine("Your Big App number is " + app.MyPrint(3, 9));
+            // ref keyword
+            int y = 5;
+            app.Set(ref y);  // pass ref
+            Console.WriteLine(y);
+            // out keyword
+            string phrase = "Smally Bigs";
+            app.Set(out phrase);  // pass out
+            Console.WriteLine(phrase);
 
             Console.WriteLine();  // space
 
-            
-            
 
 
 
-            
+
+
+
         }
     }
 }
