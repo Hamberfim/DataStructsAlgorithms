@@ -59,7 +59,28 @@
             str = "Biggy Bigs";
         }
 
+    }
+    
+    class CountUp
+    {
+        // recursive method
+        public void CountingUp()
+        {
+            int c = 20;
+            Recursive(c);
+            Console.WriteLine("\nCompleted!");
 
+            void Recursive(int i)
+            {
+                if (i > 0)
+                {
+                    Console.Write(i);
+                    System.Threading.Thread.Sleep(250);  // waiting 0.25 sec.
+                    Recursive(i - 1);  // recursive call
+                }
+            }
+
+        } 
     }
 
 
@@ -95,11 +116,8 @@
 
             Console.WriteLine();  // space
 
-
-
-
-
-
+            // recursive method - seperate class
+            new CountUp().CountingUp();
 
         }
     }
