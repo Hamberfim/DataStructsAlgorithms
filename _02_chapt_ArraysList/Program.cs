@@ -15,7 +15,7 @@ namespace _02_chapt_ArraysList
             for (int month = 1; month <= 12; month++)  // loop thru months 1 - 12
             {
                 DateTime firstDay = new DateTime(DateTime.Now.Year, month, 1);
-                
+
 
                 // cultural info set to english
                 string name = firstDay.ToString("MMMM", CultureInfo.CreateSpecificCulture("en-us"));
@@ -32,24 +32,52 @@ namespace _02_chapt_ArraysList
             Console.WriteLine();  // space in output
 
             // multi-dimentional arrays
-            int[,] myNumbers = new int[,] 
+            int[,] myNumbers = new int[,]
                 {
                     { 9, 10 },
                     {-3, 6 },
                     { 4, -10}
-            
+
                 };
             Console.WriteLine($"1st Line: {myNumbers[0, 0]}, {myNumbers[0, 1]}");
             Console.WriteLine($"2nd Line: {myNumbers[1, 0]}, {myNumbers[1, 1]}");
             Console.WriteLine($"3rd Line: {myNumbers[2, 0]}, {myNumbers[2, 1]}");
-            
+
             Console.WriteLine();  // space in output
-            
+
             int changeFLine = myNumbers[0, 0];
             Console.WriteLine($"assign changeFLine <-- myNumbers[0, 0] = {changeFLine}");
-            myNumbers[0, 0] = changeFLine +2;
+            myNumbers[0, 0] = changeFLine + 2;
 
             Console.WriteLine($"1st Line changed: {myNumbers[0, 0]}, {myNumbers[0, 1]}");
+
+            Console.WriteLine();  // space in output
+
+            // multiplication table via multi-dimentional array
+            int[,] multiplicationTable = new int[10, 10];
+
+            // calculate the multiplication table
+            for (int x = 0; x < multiplicationTable.GetLength(0); x++)
+            {
+                for (int y = 0; y < multiplicationTable.GetLength(1); y++)
+                {
+                    multiplicationTable[x, y] = (x + 1) * (y + 1);
+                }
+            }
+            
+            // print out the multiplication table
+            for (int x = 0; x < multiplicationTable.GetLength(0); x++)
+            {
+                for (int y = 0; y < multiplicationTable.GetLength(1); y++)
+                {
+                    Console.Write("{0, 4}", multiplicationTable[x, y]);
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();  // space in output
+            
+
         }
     }
 }
